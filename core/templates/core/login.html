@@ -1,0 +1,15 @@
+
+{% extends "core/base.html" %}
+
+
+{% block title %}login| {% endblock  %}
+
+{% block content %}
+    <p>{{ message }}</p>
+    <form method="post">
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <button>Log In</button>
+    </form>
+    <p class="text-center">If you dont have an account, <a href="{% url "registerpage" %}">Create Here.</a></p>
+{% endblock  %}
